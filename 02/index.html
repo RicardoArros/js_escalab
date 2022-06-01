@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./styles.css" />
+
+    <title>Evaluación 02</title>
+  </head>
+
+  <body>
+    <main class="main">
+      <!--  -->
+      <section class="search-form">
+        <form action="" id="search-form">
+          <div class="input-item">
+            <label for="student-name">Nombre Estudiante</label>
+            <input type="text" id="student-name-input" />
+          </div>
+
+          <button class="btn-form" id="btn-form">Ver estudiante</button>
+        </form>
+      </section>
+
+      <!--  -->
+      <section class="student">
+        <div class="student-name-cont" id="student-name-cont"></div>
+
+        <div class="student-grades-cont" id="student-grades-cont">
+          <form action="">
+            <label>Establecer nota aprobación:</label>
+            <input type="text" id="grade-approved" />
+            <button id="btn-grade-approved" type="submit">Establecer</button>
+          </form>
+
+          <form action="">
+            <ul>
+              <li>
+                Ingrese nota 1:
+                <input type="number" id="input-grade-1" />
+                <button id="btn-grade">Ingresar</button>
+                <p id="text-grade-approved"></p>
+              </li>
+              <li>
+                Ingrese nota 2:
+                <input type="number" id="input-grade-2" />
+                <button id="btn-grade">Ingresar</button>
+                <p id="text-grade-approved"></p>
+              </li>
+              <li>
+                Ingrese nota 3:
+                <input type="number" id="input-grade-3" />
+                <button id="btn-grade">Ingresar</button>
+                <p id="text-grade-approved"></p>
+              </li>
+            </ul>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

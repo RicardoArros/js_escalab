@@ -1,0 +1,79 @@
+/* Reset */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+
+  padding: 0;
+  margin: 0;
+}
+
+/* Global */
+
+li {
+  list-style: none;
+}
+
+/* Main */
+
+.main {
+  padding: 1rem;
+}
+
+/* Form */
+
+.search-form {
+  margin-bottom: 2rem;
+}
+
+form {
+  width: 300px;
+
+  margin-bottom: 2rem;
+}
+
+input {
+  width: 100%;
+}
+
+.input-item {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 2rem;
+}
+
+/*  */
+
+.name-header {
+  margin-bottom: 1rem;
+}
+
+.student-grades-cont {
+  width: 300px;
+}
+
+.student-grades-cont li {
+  margin-bottom: 2rem;
+}
+
+.approved {
+  color: rgb(101, 199, 101);
+}
+
+.not-approved {
+  color: rgb(199, 101, 101);
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
