@@ -108,6 +108,8 @@ const updateCart = () => {
   showCartItems();
 
   showSubtotal();
+
+  showBrandQuant();
 };
 
 // Render cart
@@ -140,10 +142,13 @@ const removeItemFromCart = (id) => {
 
 // Change number of units for an item
 const changeNumberOfUnits = (action, id) => {
+
   cart = cart.map((item) => {
+
     let numberOfUnits = item.numberOfUnits;
 
     if (item.id === id) {
+
       if (action === "plus" && numberOfUnits === item.inStock) {
         alert("Ya no queda más stock");
 
@@ -155,11 +160,12 @@ const changeNumberOfUnits = (action, id) => {
           item.inStock - numberOfUnits;
 
         console.log("Resta");
-        
+
       } else if (action === "plus" && numberOfUnits < item.inStock) {
         numberOfUnits++;
 
         document.getElementById("product-" + item.id).innerHTML = numberOfUnits;
+        
         document.getElementById("stock-" + item.id).innerHTML =
           item.inStock - numberOfUnits;
 
@@ -183,9 +189,50 @@ const showSubtotal = () => {
     //totalItems += item.numberOfUnits;
   });
 
-  cartInfo.innerHTML = `<p>Valor total de la compra: ${priceFormat(
-    totalPrice
-  )}</p>`;
+  document.querySelector(
+    "#total-cart"
+  ).textContent = `Valor total de la compra: ${priceFormat(totalPrice)}`;
+};
+
+//
+const showBrandQuant = () => {
+  let totalBrands = 0;
+
+  let currentBrand = "";
+
+  let sortCart = cart.sort((a, b) =>
+    a.brand > b.brand ? 1 : b.brand > a.brand ? -1 : 0
+  );
+
+  console.log(sortCart);
+
+  let returnHtml = "";
+
+  sortCart.map((item, i) => {
+    if (currentBrand === item.brand) {
+      totalBrands += item.numberOfUnits;
+
+    } else {
+      if (i === 0) {
+        totalBrands = item.numberOfUnits;
+
+        currentBrand = item.brand;
+
+      } else {
+        returnHtml += `<p>Está comprando ${totalBrands} televisores de marca ${currentBrand}</p>`;
+
+        totalBrands = item.numberOfUnits;
+
+        currentBrand = item.brand;
+      }
+    }
+  });
+
+  returnHtml += `<p>Está comprando ${totalBrands} televisores de marca ${currentBrand}</p>`;
+
+  document.querySelector("#total-brands").innerHTML = returnHtml;
+
+  console.log(totalBrands);
 };
 
 //
