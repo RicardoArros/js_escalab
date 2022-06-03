@@ -33,7 +33,7 @@
           <form action="">
             <label>Establecer nota aprobación:</label>
             <input type="text" id="grade-approved" />
-            <button id="btn-grade-approved" type="submit">Establecer</button>
+            <button id="btn-grade-approved" type="button" onclick="addGradeApproved()">Establecer</button>
           </form>
 
           <form action="">
@@ -41,20 +41,20 @@
               <li>
                 Ingrese nota 1:
                 <input type="number" id="input-grade-1" />
-                <button id="btn-grade">Ingresar</button>
-                <p id="text-grade-approved"></p>
+                <button type="button" id="btn-grade-1" onclick="addGradeEvaluate('input-grade-1', 'text-grade-approved-1')">Ingresar</button>
+                <p id="text-grade-approved-1"></p>
               </li>
               <li>
                 Ingrese nota 2:
                 <input type="number" id="input-grade-2" />
-                <button id="btn-grade">Ingresar</button>
-                <p id="text-grade-approved"></p>
+                <button  type="button" id="btn-grade-2" onclick="addGradeEvaluate('input-grade-2', 'text-grade-approved-2')">Ingresar</button>
+                <p id="text-grade-approved-2"></p>
               </li>
               <li>
                 Ingrese nota 3:
                 <input type="number" id="input-grade-3" />
-                <button id="btn-grade">Ingresar</button>
-                <p id="text-grade-approved"></p>
+                <button  type="button" id="btn-grade-3" onclick="addGradeEvaluate('input-grade-3', 'text-grade-approved-3')">Ingresar</button>
+                <p id="text-grade-approved-3"></p>
               </li>
             </ul>
           </form>
