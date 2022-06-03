@@ -5,15 +5,19 @@ const btnShowUser = document.getElementById("btn__login");
 
 // Get user
 const getUser = async () => {
-  const response = await fetch("https://randomuser.me/api/");
-  const data = await response.json();
-  const user = data.results[0];
+  try {
+    const response = await fetch("https://randomuser.me/api/");
+    const data = await response.json();
+    const user = data.results[0];
 
-  console.log(response);
-  console.log(data);
-  console.log(user);
+    console.log(response);
+    console.log(data);
+    console.log(user);
 
-  showUser(user);
+    showUser(user);
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 // Show user
@@ -142,16 +146,12 @@ const removeItemFromCart = (id) => {
 
 // Change number of units for an item
 const changeNumberOfUnits = (action, id) => {
-
   cart = cart.map((item) => {
-
     let numberOfUnits = item.numberOfUnits;
 
     if (item.id === id) {
-
       if (action === "plus" && numberOfUnits === item.inStock) {
         alert("Ya no queda más stock");
-
       } else if (action === "minus" && numberOfUnits > 1) {
         numberOfUnits--;
 
@@ -160,12 +160,11 @@ const changeNumberOfUnits = (action, id) => {
           item.inStock - numberOfUnits;
 
         console.log("Resta");
-
       } else if (action === "plus" && numberOfUnits < item.inStock) {
         numberOfUnits++;
 
         document.getElementById("product-" + item.id).innerHTML = numberOfUnits;
-        
+
         document.getElementById("stock-" + item.id).innerHTML =
           item.inStock - numberOfUnits;
 
@@ -211,13 +210,11 @@ const showBrandQuant = () => {
   sortCart.map((item, i) => {
     if (currentBrand === item.brand) {
       totalBrands += item.numberOfUnits;
-
     } else {
       if (i === 0) {
         totalBrands = item.numberOfUnits;
 
         currentBrand = item.brand;
-
       } else {
         returnHtml += `<p>Está comprando ${totalBrands} televisores de marca ${currentBrand}</p>`;
 

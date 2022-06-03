@@ -29,14 +29,6 @@ body {
 
 /* Global */
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-}
-
 h3 {
   line-height: 1.5;
 }
@@ -132,7 +124,6 @@ ul.products__list li.products__item {
 .item__footer .btn__add-to-cart {
   width: 100%;
 }
-
 
 /* Cart */
 
