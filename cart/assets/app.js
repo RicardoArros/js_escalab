@@ -210,7 +210,9 @@ const showBrandQuant = () => {
   sortCart.map((item, i) => {
     if (currentBrand === item.brand) {
       totalBrands += item.numberOfUnits;
+
     } else {
+      
       if (i === 0) {
         totalBrands = item.numberOfUnits;
 
